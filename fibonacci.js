@@ -26,19 +26,7 @@ console.log(fibs(8));
 //return the array (or console.log)
 
 function fibsRec(runTime) {
-  //   fibArray = [];
-  //   let i = 0;
-  //   let j = 1;
-  //   fibArray.push(i);
-  //   fibArray.push(j);
-  //   console.log("This was printed recursively");
-  //   if (runTime < 2) {
-  //     console.log(fibArray);
-  //     return [1];
-  //   } else {
-  //     return fibsRec(runTime - 1) + fibsRec(runTime - 2);
-  //   }
-  if (runTime < 2) {
+  if (runTime < 3) {
     return [0, 1];
   } else {
     let arrayFib = fibsRec(runTime - 1);
@@ -49,7 +37,7 @@ function fibsRec(runTime) {
   }
 }
 
-console.log(`Recursive: ${fibsRec(3)}`);
+console.log(`Recursive: ${fibsRec(8)}`);
 
 //PSEUDOCODE
 //create a funtion that takes a variable dictating how many times it will run (8 in this case).
