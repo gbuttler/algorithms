@@ -16,5 +16,6 @@ I want to use this repository to practise some fundamental computer science conc
 ### Linked List
 
 - Create a linked list that will display the strings you enter.
-
-_Inspired by 'The Odin Project'_
+- I initially struggled with this, as I found turning the concept into code a challenge.
+- After a lot of reserarch, trial and error I have really enjoyed playing around with factory functions and making my linked list do fun things!
+  _Inspired by 'The Odin Project'_
