@@ -241,6 +241,6 @@ console.log(
 list.insertAt("pig", 2);
 console.log(list.toString());
 
-console.log("***** remove node at given index (4 in this case) *****");
-list.removeAt(4);
+console.log("***** remove node at given index (2 in this case) *****");
+list.removeAt(2);
 console.log(list.toString());
