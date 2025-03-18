@@ -15,10 +15,6 @@ function hashMapFunc(loadFactor, capacity) {
     //used to set a key value pair in the table
     set(key, value) {
       const index = this.hash(key);
-      //   if (!this.table[index]) {
-      //     this.table[index] = [];
-      //   }
-
       this.table[index] = [key, value];
     },
 
@@ -52,19 +48,62 @@ function hashMapFunc(loadFactor, capacity) {
       return true;
     },
 
-    length() {},
+    length() {
+      let count = 0;
+      if (this.table === undefined) {
+        return "The length is 0, as this table is empty.";
+      } else {
+        for (let i = 0; i < this.table.length; i++) {
+          if (this.table[i] !== undefined) {
+            count++;
+          }
+        }
+        return count;
+      }
+    },
 
-    clear() {},
+    clear() {
+      if (this.table.length > 0) {
+        this.table = undefined;
+        return "Table has been emptied";
+      }
+      return "Table was already empty";
+    },
 
-    keys() {},
+    keys() {
+      const justKeys = [];
 
-    values() {},
+      for (let i = 0; i < this.table.length; i++) {
+        if (this.table[i]) {
+          const keyAtIndex = this.table[i][0];
+          justKeys.push(keyAtIndex);
+        }
+      }
+      return justKeys;
+    },
+
+    values() {
+      const justValues = [];
+
+      for (let i = 0; i < this.table.length; i++) {
+        if (this.table[i]) {
+          const valueAtIndex = this.table[i][1];
+          justValues.push(valueAtIndex);
+        }
+      }
+      return justValues;
+    },
 
     //display the contents of the hash table
-    entries(key, value) {
+    entries() {
+      let tableDisplay = [];
       for (let i = 0; i < this.table.length; i++) {
-        return `[${key}, ${value}]`;
+        if (this.table[i]) {
+          const dataAtIndex = this.table[i];
+          tableDisplay.push(dataAtIndex);
+        }
       }
+      return tableDisplay;
     },
   };
 }
@@ -72,13 +111,18 @@ function hashMapFunc(loadFactor, capacity) {
 let hashMap = hashMapFunc(0.75, 67);
 
 hashMap.set("sam", 29);
-console.log(hashMap.get("sam"));
-console.log(hashMap.has("sam"));
-// console.log(hashMap.has("grace"));
-// hashMap.set("grace", 31);
-// hashMap.set("sid", 100);
+hashMap.set("grace", 31);
+hashMap.set("sid", 100);
 
-// console.log(hashMap.entries());
+// console.log(hashMap.get("sam"));
+
+// console.log(hashMap.has("sam"));
+// console.log(hashMap.length());
+// console.log(hashMap.clear());
+// console.log(hashMap.length());
+console.log(hashMap.keys());
+console.log(hashMap.values());
+console.log(hashMap.entries());
 // let index = hashMap.hash("C");
 // if (index) {
 //   console.log("yes");
